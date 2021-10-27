@@ -25,7 +25,7 @@
 <!--  -->
 
 <link rel="stylesheet" href="c.css">
-<script src="j.js"></script>
+<!-- <script src="j.js"></script> -->
 
 <!--  -->
 
@@ -56,109 +56,19 @@ display: none;
 <br>
 
 <!-- boton para obtener el tiempo de inicio -->
-<button id="b" class="btn btn-primary" onclick="start()">Iniciar</button>
+<button id="b" class="btn btn-primary" onclick="">Iniciar</button>
 <!-- boton para obtener el tiempo final de color rojo -->
-<button id="b2" class="btn btn-danger" onclick="stop()">Finalizar</button>
+<button id="b2" class="btn btn-danger" onclick="">Finalizar</button>
 <!-- <button id="b2" class="btn btn-primary" onclick="stop()">Detener</button> -->
+
+
+<script src="j.js"></script>
+
 
     <script>
 
 // cuando se precione el boton se obtendra la hora y los minutos en variables y se guardaran en dispositivo
 
-
-
-var b = document.getElementById("b");
-var b2 = document.getElementById("b2");
-
-var t4 = document.getElementById("t4");
-var t5 = document.getElementById("t5");
-
-var array_temporal = [];
-var vt = 0;
-var vtt = 0;
-
-var dur = 0;
-
-var days = [];
-var hs= [];
-var til= [];
-
-
-var s1 = 0;
-var s2 = 0;
-
-var time= new Date();
-var d;
-var h;
-var m;
-var s;
-
-
-var contador = setInterval(()=>{
-time= new Date();
-d = time.getDay();
-h = time.getHours();
-m = time.getMinutes();
-s = time.getSeconds();
-
-//mostrar loa hora, minutos y segundos en el h1 con el id t
-document.getElementById("t").innerHTML = h+":"+m+":"+s;
-
-},100);
-
-
-
-b.addEventListener("click", ()=>{
-
-document.getElementById("t2").innerHTML = h+":"+m+":"+s;
-document.getElementById("b").style.display = "none";
-document.getElementById("b2").style.display = "block";
-s1 = (h*60*60)+(m*60)+s;
-days.push(d);
-hs.push(s1);
-var y=0;
-for(var x=0; x<til.length; x++){
-    
-
-    vtt += til[x];
-
-
-    if(days[x]==d){
-    // array_temporal.push(days[x]);
-    vt += til[x];
-    y++;
-    }
-
-}
-vt/=y;
-vtt/=til.length;
-
-t4.innerHTML = "total: "+(vtt/60)+" minutos";
-t5.innerHTML = "dia: "+(vt/60)+" minutos";
-
-console.log(days);
-console.log(vtt);
-
-});
-
-
-b2.addEventListener("click", ()=>{
-
-document.getElementById("t3").innerHTML = h+":"+m+":"+s;
-document.getElementById("b2").style.display = "none";
-document.getElementById("b").style.display = "block";
-s2 = (h*60*60)+(m*60)+s;
-
-
-dur = s2 - s1; 
-// console.log(s2-s1);  
-days.push(d);
-til.push(dur);
-
-// console.log(s2);
-// console.log(s1);
-
-});
 
 
 
